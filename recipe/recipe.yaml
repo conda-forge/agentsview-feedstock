@@ -11,6 +11,8 @@ source:
   url: https://github.com/kenn-io/agentsview/archive/refs/tags/v${{ version }}.tar.gz
   sha256: edec20141db85475b4b938ebe92975047a5c5e405fdb86fc58b76a6c7ebf74ff
   target_directory: src
+  patches:
+    - remove_package_manager.patch
 
 build:
   # There are some spurious failures with pnpm on Windows; skip for now.

@@ -1,0 +1,10 @@
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -40,5 +40,4 @@
+   "overrides": {
+     "vite": "npm:@voidzero-dev/vite-plus-core@0.1.24",
+     "vitest": "npm:@voidzero-dev/vite-plus-test@0.1.24"
+-  },
+-  "packageManager": "npm@11.17.0"
++  }
+ }
