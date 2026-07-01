@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-parsers/main/schema.json
 
 context:
-  version: "0.34.5"
+  version: "0.35.0"
 
 package:
   name: agentsview
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/kenn-io/agentsview/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 3a4bbda331eb35e860cb03bf626725a80dc5eb41d9cf5b5a84e4def34c09bb84
+  sha256: 263871fa1269c8e5b19964c2dbfe63775f0a6f7d2b11c23a5a7478e280e3bb92
   target_directory: src
   patches:
     - remove_package_manager.patch
@@ -20,6 +20,7 @@ build:
   number: 0
   script:
     - cd src
+    - go run ./internal/pricing/cmd/litellm-snapshot -restore
     - cd frontend && pnpm install && pnpm run build && cd ..
     - rm -rf internal/web/dist
     - cp -r frontend/dist internal/web/dist
