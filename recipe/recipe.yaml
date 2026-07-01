@@ -20,6 +20,7 @@ build:
   number: 0
   script:
     - cd src
+    - go run ./internal/pricing/cmd/litellm-snapshot -restore
     - cd frontend && pnpm install && pnpm run build && cd ..
     - rm -rf internal/web/dist
     - cp -r frontend/dist internal/web/dist
