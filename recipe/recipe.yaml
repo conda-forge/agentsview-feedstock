@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-parsers/main/schema.json
 
 context:
-  version: "0.36.1"
+  version: "0.37.1"
 
 package:
   name: agentsview
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/kenn-io/agentsview/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 1630f6b1acbf98e841152764c6c2936a62d0408363802462b4967541ba891f1d
+  sha256: 90840f0bc238d7cd0c00dcf719a79a827a5929c7b11630db375c655757cf53d7
   target_directory: src
   patches:
     - remove_package_manager.patch
